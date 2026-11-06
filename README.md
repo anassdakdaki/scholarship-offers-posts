@@ -1,6 +1,16 @@
 # Scholarship Formatter (CLI + Web)
 
-A local Python app that accepts messy scholarship text and converts it into a clean summary.
+A Python tool that turns unstructured scholarship text into consistent summaries, with a command-line interface and a Flask web editor.
+
+The parser uses rules and regular expressions; no AI API key is required. Review parsed dates, fees, and eligibility details against the original offer before publishing.
+
+## Project layout
+
+- `app.py`: parsing, normalization, formatting, and CLI.
+- `web_app.py`: Flask form, editable fields, and summary preview.
+- `api/index.py`: WSGI entry point.
+
+The web editor supports reviewing and editing extracted fields before copying the result.
 
 ## What it extracts
 
@@ -54,7 +64,6 @@ tuition: USD 20,000 per year
 majors: Computer Science / Business Analytics; Civil Engineering
 english medium yes
 important: maintain GPA 3.0+
-extra text blah blah not needed
 ```
 
 ### Formatted output
